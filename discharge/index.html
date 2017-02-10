@@ -9,13 +9,37 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-messages.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+    <script>
+    var discharge = angular.module('discharge', ['ngMaterial']);
+
+    discharge.controller('CalcDischarge', function($scope) {
+        $scope.myStartDate = new Date();
+        $scope.isOpen = false;
+
+        $scope.DutyType = [
+            {'name': '육군'},
+            {'name': '해군'},
+            {'name': '공군'},
+            {'name': '해병대'}
+        ];
+
+        $scope.Calc = function(duty, StartDate) {
+            alert(StartDate);
+            };
+    });
+    </script>
 </head>
 <body>
-    <div>
-        <label>Name:</label>
-        <input type="text" ng-model="yourName" placeholder="Enter a name here">
-        <hr>
-        <h1>Hello {{yourName}}!</h1>
+    <div ng-app="discharge">
+        <md-content ng-controller="CalcDischarge as ctrl">
+            <md-datepicker ng-model="myStartDate" md-placeholder="Enter date"></md-datepicker>
+            <md-list ng-controller="CalcDischarge as ctrl" ng-cloak>
+                <md-list-item ng-repeat="duty in DutyType" ng-click="Calc(duty, myStartDate)" class="noright">
+                    <p>{{ duty.name }}</p>
+                </md-list-item>
+            </md-list>
+        </md-content>
     </div>
 </body>
 </html>
