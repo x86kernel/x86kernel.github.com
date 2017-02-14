@@ -15,6 +15,12 @@
     <script type="text/javascript">
     var discharge = angular.module('discharge', ['ngMaterial']);
 
+    discharge.config(function($mdDateLocaleProvider) {
+        $mdDateLocaleProvider.formatDate = function(date) {
+            return moment(date).format('YYYY년 MM월 DD일');
+        };
+    });
+
     discharge.controller('CalcDischarge', function($scope) {
         $scope.myStartDate = new Date();
         $scope.isOpen = false;
