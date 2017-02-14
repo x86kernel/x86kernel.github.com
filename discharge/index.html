@@ -18,28 +18,40 @@
         $scope.isOpen = false;
 
         $scope.DutyType = [
-            {'name': '육군'},
-            {'name': '해군'},
-            {'name': '공군'},
-            {'name': '해병대'}
+            {'name': '육군', 'months': 21},
+            {'name': '해군', 'months': 23},
+            {'name': '공군', 'months': 24},
+            {'name': '해병대', 'months': 21}
         ];
 
-        $scope.Calc = function(duty, StartDate) {
-            alert(StartDate);
-            };
+        $scope.Calc = function(duty) { 
+            var mtCurrent = moment();
+            var mtStartDate = moment($scope.myStartDate);
+
+            var mtLapseDays = moment.duration(mtCurrent.diff(mtStartDate)).asDays();
+
+            var mtEndDate = moment(mtStartDate.add(duty.months, 'months'));
+            var mtStartDate = moment($scope.myStartDate);
+            var mtTotalDays = moment.duration(mtEndDate.diff(mtStartDate)).asDays();
+
+            $scope.dutyProgress = (mtLapseDays / mtTotalDays) * 100;
+        };
     });
     </script>
 </head>
 <body>
-    <div ng-app="discharge">
-        <md-content ng-controller="CalcDischarge as ctrl">
-            <md-datepicker ng-model="myStartDate" md-placeholder="Enter date"></md-datepicker>
-            <md-list ng-controller="CalcDischarge as ctrl" ng-cloak>
-                <md-list-item ng-repeat="duty in DutyType" ng-click="Calc(duty, myStartDate)" class="noright">
-                    <p>{{ duty.name }}</p>
-                </md-list-item>
-            </md-list>
-        </md-content>
+<div ng-app="discharge">
+    <md-content ng-controller="CalcDischarge">
+        <md-datepicker ng-model="myStartDate" md-placeholder="입대일"></md-datepicker>
+        <md-list ng-cloak>
+            <md-list-item ng-repeat="duty in DutyType" ng-click="Calc(duty)" class="noright">
+                <p>{{ duty.name }}</p>
+            </md-list-item>
+        </md-list>
+    <div layout="column" layout-margin style="padding:25px;" ng-cloak>
+        <md-progress-linear md-mode="determinate" value="{{ dutyProgress }}"></md-progress-linear>
     </div>
+    </md-content>
+</div>
 </body>
 </html>
