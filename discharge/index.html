@@ -27,10 +27,21 @@
 
         $scope.DutyType = [
             {'name': '육군', 'img': 'assets/img/roka.jpg', 'months': 21},
-            {'name': '해군', 'img': 'assets/img/rokaf.jpg', 'months': 23},
-            {'name': '공군', 'months': 24},
-            {'name': '해병대', 'months': 21}
+            {'name': '해군', 'img': 'assets/img/rokn.jpg', 'months': 23},
+            {'name': '공군', 'img': 'assets/img/rokaf.jpg', 'months': 24},
+            {'name': '해병대', 'img': 'assets/img/rokmc.jpg', 'months': 21}
         ];
+
+        $scope.duty = $scope.DutyType[0];
+
+        $scope.$watch('myStartDate', function(newDate, oldDate) {
+            $scope.Calc($scope.duty);
+        });
+
+        $scope.setDuty = function(duty) {
+            $scope.duty = duty;
+            $scope.Calc(duty);
+        }
 
         $scope.Calc = function(duty) { 
             var mtCurrent = moment();
@@ -52,7 +63,7 @@
     <md-content ng-controller="CalcDischarge">
         <md-datepicker ng-model="myStartDate" md-placeholder="입대일"></md-datepicker>
         <md-list ng-cloak>
-            <md-list-item ng-repeat="duty in DutyType" ng-click="Calc(duty)" class="noright">
+            <md-list-item ng-repeat="duty in DutyType" ng-click="setDuty(duty)" class="noright">
                 <img ng-src="{{ duty.img }}" class="md-avatar" />
                 <p>{{ duty.name }}</p>
             </md-list-item>
