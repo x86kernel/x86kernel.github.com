@@ -26,10 +26,25 @@
         $scope.isOpen = false;
 
         $scope.DutyType = [
-            {'name': '육군', 'img': 'assets/img/roka.jpg', 'months': 21},
-            {'name': '해군', 'img': 'assets/img/rokn.jpg', 'months': 23},
-            {'name': '공군', 'img': 'assets/img/rokaf.jpg', 'months': 24},
-            {'name': '해병대', 'img': 'assets/img/rokmc.jpg', 'months': 21}
+            {'name': '육군', 
+            'subname': '강한 친구 대한민국 육군!',
+            'img': 'assets/img/roka.jpg', 
+            'months': 21},
+
+            {'name': '해군', 
+            'subname': '해군의 힘, 대한민국의 미래입니다',
+            'img': 'assets/img/rokn.jpg', 
+            'months': 23},
+
+            {'name': '공군', 
+            'subname': '대한민국을 지키는 가장 높은 힘',
+            'img': 'assets/img/rokaf.jpg', 
+            'months': 24},
+
+            {'name': '해병대', 
+            'subname': '한번 해병은 영원한 해병',
+            'img': 'assets/img/rokmc.jpg', 
+            'months': 21}
         ];
 
         $scope.duty = $scope.DutyType[0];
@@ -73,6 +88,7 @@
         <md-card-title>
             <md-card-title-text>
                 <span class="md-headline">{{ duty.name }}</span>
+                <span class="md-subhead">{{ duty.subname }}</span>
             </md-card-title-text>
         </md-card-title>
         <md-progress-linear md-mode="determinate" value="{{ dutyProgress }}"></md-progress-linear>
