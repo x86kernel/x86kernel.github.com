@@ -90,6 +90,11 @@
                 <span class="md-headline">{{ duty.name }}</span>
                 <span class="md-subhead">{{ duty.subname }}</span>
             </md-card-title-text>
+            <md-card-title-media>
+                <div class="md-media-sm">
+                    <img ng-src="{ duty.img }}" />
+                </div>
+            </md-card-title-media>
         </md-card-title>
         <md-progress-linear md-mode="determinate" value="{{ dutyProgress }}"></md-progress-linear>
         </md-card>
