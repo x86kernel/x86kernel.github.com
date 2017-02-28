@@ -47,14 +47,19 @@
             'months': 21}
         ];
 
-        $scope.duty = $scope.DutyType[0];
+        $scope.CardDefault = {
+            'name': '민간인'
+        };
+
+        $scope.MyDuty = null;
+        $scope.MyTotalDays = null;
 
         $scope.$watch('myStartDate', function(newDate, oldDate) {
-            $scope.Calc($scope.duty);
+            $scope.Calc($scope.MyDuty);
         });
 
         $scope.setDuty = function(duty) {
-            $scope.duty = duty;
+            $scope.MyDuty = duty;
             $scope.Calc(duty);
         }
 
@@ -87,8 +92,13 @@
         <md-card md-theme="default" md-theme-watch>
         <md-card-title>
             <md-card-title-text>
-                <span class="md-headline">{{ duty.name }}</span>
-                <span class="md-subhead">{{ duty.subname }}</span>
+                <div ng-if="MyDuty != null">
+                    <span class="md-headline">{{ duty.name }}</span>
+                    <span class="md-subhead">{{ duty.subname }}</span>
+                </div>
+                <div ng-if="Myduty == null">
+                    <span class="md-headline">{{ CardDefault.name }}</span>
+                </div>
             </md-card-title-text>
             <md-card-title-media>
                 <div class="md-media-sm">
