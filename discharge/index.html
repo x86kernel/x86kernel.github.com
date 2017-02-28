@@ -93,8 +93,8 @@
         <md-card-title>
             <md-card-title-text>
                 <div ng-if="MyDuty != null">
-                    <span class="md-headline">{{ duty.name }}</span>
-                    <span class="md-subhead">{{ duty.subname }}</span>
+                    <span class="md-headline">{{ MyDuty.name }}</span>
+                    <span class="md-subhead">{{ MyDuty.subname }}</span>
                 </div>
                 <div ng-if="Myduty == null">
                     <span class="md-headline">{{ CardDefault.name }}</span>
@@ -102,7 +102,7 @@
             </md-card-title-text>
             <md-card-title-media>
                 <div class="md-media-sm">
-                    <img ng-src="{{ duty.img }}" />
+                    <img ng-src="{{ MyDuty.img }}" />
                 </div>
             </md-card-title-media>
         </md-card-title>
