@@ -91,15 +91,17 @@
     <div flex-xs flex-gt-xs="50" layout="column">
         <md-card md-theme="default" md-theme-watch>
         <md-card-title>
-            <md-card-title-text>
-                <div ng-if="MyDuty != null">
+            <div ng-if="MyDuty != null">
+                <md-card-title-text>
                     <span class="md-headline">{{ MyDuty.name }}</span>
                     <span class="md-subhead">{{ MyDuty.subname }}</span>
-                </div>
-                <div ng-if="MyDuty == null">
+                </md-card-title-text>
+            </div>
+            <div ng-if="MyDuty == null">
+                <md-card-title-text>
                     <span class="md-headline">{{ CardDefault.name }}</span>
-                </div>
-            </md-card-title-text>
+                </md-card-title-text>
+            </div>
             <md-card-title-media>
                 <div class="md-media-sm">
                     <img ng-src="{{ MyDuty.img }}" />
