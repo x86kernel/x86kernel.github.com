@@ -90,25 +90,38 @@
         </md-list>
     <div flex-xs flex-gt-xs="50" layout="column">
         <md-card md-theme="default" md-theme-watch>
-        <md-card-title>
-            <div ng-if="MyDuty != null">
+        <div ng-if="MyDuty != null">
+            <md-card-title>
                 <md-card-title-text>
                     <span class="md-headline">{{ MyDuty.name }}</span>
                     <span class="md-subhead">{{ MyDuty.subname }}</span>
                 </md-card-title-text>
-            </div>
-            <div ng-if="MyDuty == null">
+
+                <md-card-title-media>
+                    <div class="md-media-sm">
+                        <img ng-src=" {{ MyDuty.img }}" />
+                    </div>
+                </md-card-title-media>
+
+            </md-card-title>
+
+            <md-card-content>
+                <md-progress-linear md-mode="determinate" value="{{ dutyProgress }}"></md-progress-linear>
+            </md-card-content>
+        </div>
+        <div ng-if="MyDuty == null">
+            <md-card-title>
                 <md-card-title-text>
                     <span class="md-headline">{{ CardDefault.name }}</span>
                 </md-card-title-text>
-            </div>
-            <md-card-title-media>
-                <div class="md-media-sm">
-                    <img ng-src="{{ MyDuty.img }}" />
-                </div>
-            </md-card-title-media>
-        </md-card-title>
-        <md-progress-linear md-mode="determinate" value="{{ dutyProgress }}"></md-progress-linear>
+
+                <md-card-title-media>
+                    <div class="md-media-sm">
+                    </div>
+                </md-card-title-media>
+
+            </md-card-title>
+        </div>
         </md-card>
     </div>
     </md-content>
