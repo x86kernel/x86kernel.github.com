@@ -77,17 +77,36 @@
         };
     });
     </script>
+    <style type="text/css">
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cencon {
+            margin: 0 auto;
+        }
+
+        .typecon {
+            width: 50%;
+        }
+    </style>
 </head>
 <body>
 <div ng-app="discharge">
     <md-content ng-controller="CalcDischarge">
-        <md-datepicker ng-model="myStartDate" md-placeholder="입대일"></md-datepicker>
-        <md-list ng-cloak>
-            <md-list-item ng-repeat="duty in DutyType" ng-click="setDuty(duty)" class="noright">
-                <img ng-src="{{ duty.img }}" class="md-avatar" />
-                <p>{{ duty.name }}</p>
-            </md-list-item>
-        </md-list>
+        <div class="container">
+        <div class="cencon">
+            <md-datepicker ng-model="myStartDate" md-placeholder="입대일"></md-datepicker>
+        </div>
+        <div class="cencon typecon">
+            <md-list ng-cloak>
+                <md-list-item ng-repeat="duty in DutyType" ng-click="setDuty(duty)" class="noright">
+                    <img ng-src="{{ duty.img }}" class="md-avatar" />
+                    <p>{{ duty.name }}</p>
+                </md-list-item>
+            </md-list>
+        </div>
     <div flex-xs flex-gt-xs="50" layout="column">
         <md-card md-theme="default" md-theme-watch>
         <div ng-if="MyDuty != null">
@@ -123,6 +142,7 @@
             </md-card-title>
         </div>
         </md-card>
+    </div>
     </div>
     </md-content>
 </div>
