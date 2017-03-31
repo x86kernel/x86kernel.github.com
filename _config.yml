@@ -2,5 +2,6 @@ title: x86kernel<br>(JaeYoung Mun)
 email: x86kernel@archlinux.info
 description:
     Email: x86kernel@archlinux.info
+baseurl: ""
 
 theme: jekyll-theme-minimal
