@@ -1,4 +1,6 @@
-title: x86kernel (Jae Young Mun)
+title: x86kernel<br>(JaeYoung Mun)
 email: x86kernel@archlinux.info
+description:
+    Email: x86kernel@archlinux.info
 
 theme: jekyll-theme-minimal

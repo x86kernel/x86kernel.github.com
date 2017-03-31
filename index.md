@@ -1,37 +1,22 @@
-## Welcome to GitHub Pages
+## Summary
 
-You can use the [editor on GitHub](https://github.com/x86kernel/x86kernel.github.com/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+Student @ Computer Engineering, University of Chosun, South Korea
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Experience
 
-### Markdown
+### Student @ Best of the Best 3rd.
+	- 2014. 07 ~ 2014. 12
+	- 2014 Whitehat Contest finals (Team, FrozenBeer)
+	- 2014 HolyShield 10th (Team, 수호형늙지마요)
+	- 2014 Hack the Packet finals 4th (Solo, 형_같이가요)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Software Engineer @ ROKCC.
+	- 2015. 11 ~ 2017. 07
 
-```markdown
-Syntax highlighted code block
+## Speak
 
-# Header 1
-## Header 2
-### Header 3
+### 2014 U.U.U(the Union of the Universal University for CERT)
+	- Stack corruption vulnerability (BOF, ASLR, ROP ...)
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/x86kernel/x86kernel.github.com/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### 2015 KUCIS(Korea University Clubs Information Security)
+	- Software Bug Hunting
