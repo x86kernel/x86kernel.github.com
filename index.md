@@ -10,8 +10,10 @@ Student @ Computer Engineering, University of Chosun, South Korea
 	- 2014 HolyShield 10th (Team, 수호형늙지마요)
 	- 2014 Hack the Packet finals 4th (Solo, 형_같이가요)
 
-### Software Engineer @ ROKCC.
+### Software Engineer @ Republic of Korea Cyber Command.
 	- 2015. 11 ~ 2017. 07
+	
+### Student @ Software Maestro 9th.
 
 ## Speak
 
